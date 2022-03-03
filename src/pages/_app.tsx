@@ -7,6 +7,8 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+import { CookiesProvider } from 'cookies';
+
 type NextPageWithLayout = NextPage & {
     getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -18,5 +20,9 @@ type AppPropsWithLayout = AppProps & {
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
     const getLayout = Component.getLayout ?? ((page) => page);
 
-    return getLayout(<Component {...pageProps} />);
+    return (
+        <CookiesProvider>
+            {getLayout(<Component {...pageProps} />)}
+        </CookiesProvider>
+    );
 }
