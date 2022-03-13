@@ -1,7 +1,7 @@
 {
-  "name": "montrek",
+  "name": "zaper-auth-ui",
   "version": "0.1.0",
-  "description": "your money tracker",
+  "description": "ui for zaper auth",
   "author": "Aza Maulana",
   "scripts": {
     "dev": "next dev",
